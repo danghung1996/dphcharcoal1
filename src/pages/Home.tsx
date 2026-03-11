@@ -71,7 +71,7 @@ const Home = () => {
             
             <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-black text-ink mb-10 leading-[0.8] tracking-tighter uppercase">
               PURE <br />
-              <span className="text-industrial-orange text-glow">CARBON</span>
+              <span className="text-industrial-orange text-glow">CHARCOAL</span>
             </h1>
             
             <p className="text-gray-600 text-lg md:text-xl mb-14 max-w-2xl mx-auto leading-relaxed font-light tracking-wide">

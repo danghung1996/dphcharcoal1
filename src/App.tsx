@@ -10,24 +10,35 @@ import Export from './pages/Export';
 import SupplierSEO from './pages/SupplierSEO';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-const ScrollToTop = () => {
+export const ScrollToTop = () => {
   const { pathname } = useLocation();
+
+  // Scroll khi route thay đổi
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [pathname]);
+
+  // Scroll ngay khi load lần đầu
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return null;
 };
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/dphcharcoal1/">
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+			<Route path="/home" element={<Home />} />  {/* thêm dòng này */}
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             
