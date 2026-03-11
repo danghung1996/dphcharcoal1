@@ -42,118 +42,75 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-paper-white">
       {/* Parallax Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
-          style={{ y: y1, scale }}
-          className="absolute inset-0 z-0"
+      {/* Premium Hero Section */}
+<section className="relative h-screen flex items-center justify-center overflow-hidden">
+
+  {/* Background */}
+  <motion.div 
+    style={{ y: y1 }}
+    className="absolute inset-0 z-0"
+  >
+    <img
+      src="/images/hero-charcoal.jpg"
+      alt="Laos Premium Charcoal"
+      className="w-full h-full object-cover scale-110"
+    />
+
+    {/* dark overlay */}
+    <div className="absolute inset-0 bg-black/60"></div>
+  </motion.div>
+
+  {/* Content */}
+  <div className="container mx-auto px-6 relative z-10 text-center">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+
+      <span className="text-industrial-orange uppercase tracking-[0.5em] text-xs font-bold">
+        Premium Charcoal Exporter
+      </span>
+
+      <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white leading-[0.9] mt-6 uppercase">
+        PURE
+        <br />
+        <span className="text-industrial-orange">CHARCOAL</span>
+      </h1>
+
+      <p className="text-gray-300 text-lg md:text-xl mt-8 max-w-2xl mx-auto">
+        High-density White Charcoal & Binchotan produced in Laos and exported worldwide for premium restaurants and BBQ markets.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+
+        <Link
+          to="/products"
+          className="bg-industrial-orange text-white font-bold py-5 px-12 uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all"
         >
-          <img 
-            src="https://picsum.photos/seed/charcoal-premium-v4/1920/1080?grayscale" 
-            alt="Premium Charcoal" 
-            className="w-full h-full object-cover opacity-20 scale-110"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-paper-white/10 via-paper-white/40 to-paper-white"></div>
-        </motion.div>
+          View Products
+        </Link>
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ opacity }}
-          >
-            <div className="inline-flex items-center space-x-4 mb-8">
-              <div className="h-[1px] w-12 bg-industrial-orange/50"></div>
-              <span className="text-industrial-orange font-bold uppercase tracking-[0.5em] text-[10px]">Elite Manufacturing & Export</span>
-              <div className="h-[1px] w-12 bg-industrial-orange/50"></div>
-            </div>
-            
-            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-black text-ink mb-10 leading-[0.8] tracking-tighter uppercase">
-              PURE <br />
-              <span className="text-industrial-orange text-glow">CHARCOAL</span>
-            </h1>
-            
-            <p className="text-gray-600 text-lg md:text-xl mb-14 max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
-              Vietnam's premier industrial manufacturer supplying high-density Binchotan to the world's most demanding culinary markets.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Link to="/products" className="relative overflow-hidden bg-industrial-orange text-white font-black py-6 px-16 uppercase tracking-[0.2em] text-xs hover:text-black transition-colors group">
-                <span className="relative z-10 flex items-center">
-                  Explore Catalog <ArrowRight size={16} className="ml-3 group-hover:translate-x-2 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-ink translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-              </Link>
-              <Link to="/contact" className="group flex items-center space-x-4 text-ink font-black uppercase tracking-[0.2em] text-xs">
-                <span>Contact Supplier</span>
-                <div className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center group-hover:bg-ink group-hover:text-white transition-all">
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4"
+        <Link
+          to="/contact"
+          className="border border-white text-white py-5 px-12 uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all"
         >
-          <span className="text-[8px] font-black uppercase tracking-[0.5em] text-ink/30">Scroll to Explore</span>
-          <div className="w-[1px] h-16 bg-gradient-to-b from-industrial-orange to-transparent"></div>
-        </motion.div>
-      </section>
+          Contact Supplier
+        </Link>
 
-      {/* Global Presence Section with Map */}
-      <section className="py-40 bg-paper-white relative">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-industrial-orange font-bold uppercase tracking-[0.3em] text-xs mb-6 block">Global Reach</span>
-                <h2 className="text-5xl md:text-7xl font-black text-ink tracking-tighter uppercase leading-[0.9] mb-10">
-                  TRUSTED BY <br />
-                  <span className="text-industrial-orange">IMPORTERS</span> <br />
-                  WORLDWIDE
-                </h2>
-                <p className="text-gray-600 text-xl font-light leading-relaxed mb-12 max-w-xl">
-                  From the bustling BBQ districts of Tokyo and Seoul to the high-end kitchens of Dubai and London, ĐHP Charcoal is the preferred choice for quality-conscious importers.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-12">
-                  {[
-                    { label: 'Export Volume', val: '8', sub: 'Containers / Month' },
-                    { label: 'Global Ports', val: '24', sub: 'Direct Shipments' },
-                  ].map((item, i) => (
-                    <div key={i} className="space-y-2">
-                      <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest">{item.label}</p>
-                      <h4 className="text-4xl font-black text-ink">{item.val}</h4>
-                      <p className="text-industrial-orange text-[10px] font-black uppercase tracking-widest">{item.sub}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <WorldMap />
-              <div className="absolute -top-10 -right-10 w-40 h-40 border-t border-r border-industrial-orange/20 -z-10"></div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      </div>
+
+    </motion.div>
+
+  </div>
+
+  {/* Scroll indicator */}
+  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+    <div className="w-[1px] h-16 bg-white/40"></div>
+  </div>
+
+</section>
 
       {/* Animated Stats Section */}
       <section className="py-24 bg-soft-gray border-y border-black/5 relative z-10">
