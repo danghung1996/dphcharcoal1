@@ -9,9 +9,6 @@ import Factory from './pages/Factory';
 import Export from './pages/Export';
 import SupplierSEO from './pages/SupplierSEO';
 import Resources from './pages/Resources';
-import Contact from './pages/Contact';
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();

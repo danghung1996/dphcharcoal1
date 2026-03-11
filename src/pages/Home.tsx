@@ -51,7 +51,7 @@ const Home = () => {
     className="absolute inset-0 z-0"
   >
     <img
-      src="/images/hero-charcoal.jpg"
+      src="/images/hero.jpg"
       alt="Laos Premium Charcoal"
       className="w-full h-full object-cover scale-110"
     />
